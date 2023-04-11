@@ -29,13 +29,9 @@ app.listen(process.env.PORT,()=>{
 })
 
 async function main(){
-    const res = await mongoose.connect(process.env.DB,{useNewUrlParser: true,
-        useUnifiedTopology: true
-     })
+    const res = await mongoose.connect(process.env.DB)
     const data = await res.default;
     console.log(data.STATES[data.STATES.connected])
 }
-
-main()
 
 main()

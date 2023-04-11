@@ -25,7 +25,7 @@ exports.postIncome = async (req,res)=>{
 
 exports.putIncome = async (req,res)=>{
     try {
-       const data = await Income.findByIdAndUpdate(req.params.id, req.body);
+       const data = await Income.findByIdAndUpdate(req.params.id, req.body,{new:true});
        return res.status(200).send({errors:false, data:data})
     } catch (error) {
        return res.status(400).send({errors:false, message:error.message})

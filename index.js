@@ -29,9 +29,13 @@ app.listen(process.env.PORT,()=>{
 })
 
 async function main(){
+   try {
     const res = await mongoose.connect(process.env.DB)
     const data = await res.default;
     console.log(data.STATES[data.STATES.connected])
+   } catch (error) {
+      console.log("error is :",error);
+   }
 }
 
 main()
